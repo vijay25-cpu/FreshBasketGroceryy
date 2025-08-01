@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Products — FreshBasket Grocery</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #111;
+      color: #fff;
+    }
+    header {
+      background-image: url("grocery.jpg"); 
+      background-size: cover;
+      background-position: center;
+      width: auto;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 4em;
+      margin: 0;
+    }
+    header p {
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+    nav {
+      background-color: transparent;
+      padding: 1em;
+      text-align: center;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    h2 {
+      text-align: center;
+      color: #feca1a;
+      margin-top: 2em;
+    }
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2em;
+      padding: 2em;
+      background-color: #1a1a1a;
+    }
+    .product-card {
+      background-color: #222;
+      border-radius: 10px;
+      width: 240px;
+      padding: 1em;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+      cursor: pointer;
+    }
+    .product-card:hover {
+      transform: scale(1.05);
+    }
+    .product-card img {
+      width: 50%;
+      border-radius: 8px;
+    }
+    .product-card h3 {
+      margin: 0.5em 0;
+      color: #feca1a;
+    }
+    .product-card p {
+      font-size: 0.9em;
+      margin: 0.5em 0;
+    }
+    .product-card .price {
+      font-weight: bold;
+    }
+    .selected {
+      border: 2px solid #feca1a !important;
+    }
+    #totalDisplay {
+      text-align: center;
+      font-size: 1.5em;
+      padding: 1em;
+      background-color: #1a1a1a;
+      color: #feca1a;
+    }
+    footer {
+      background-color: #222;
+      text-align: center;
+      padding: 2em;
+      margin-top: 2em;
+      color: #aaa;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Our Products</h1>
+    <p>Fresh. Affordable. Delivered to your doorstep.</p>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  </header>
+  <h2>Fruits</h2>
+  <section class="product-grid" id="fruits">
+    <div class="product-card" onclick="toggleItem(this,'Apple',120)"><img src="apple.jpg"><h3>Apple</h3><p>Red, sweet and crunchy.</p><p class="price">₹120 / kg</p></div>
+    <div class="product-card" onclick="toggleItem(this,'Banana',45)"><img src="banana.jpg"><h3>Banana</h3><p>Cavendish bananas.</p><p class="price">₹45 / dozen</p></div>
+    <div class="product-card" onclick="toggleItem(this,'Grapes',95)"><img src="grapes.jpg"><h3>Grapes</h3><p>Seedless green grapes.</p><p class="price">₹95 / kg</p></div>
+    <div class="product-card" onclick="toggleItem(this,'Watermelon',30)"><img src="watermelon.jpg"><h3>Watermelon</h3><p>Large and juicy.</p><p class="price">₹30 / kg</p></div>
+    <div class="product-card" onclick="toggleItem(this,'Orange',70)"><img src="orange.jpg"><h3>Orange</h3><p>Valencia oranges.</p><p class="price">₹70 / kg</p></div>
+    <div class="product-card" onclick="toggleItem(this,'Orange',70)"><img src="papaya.jpg" alt="Papaya"><h3> Papaya</h3><p>Great for digestion.</p><p class="price">₹35 / kg</p></div>
+<div class="product-card" onclick="toggleItem(this,'Pomegranate',120)"><img src="pomegranate.jpg" alt="Pomegranate"><h3> Pomegranate</h3><p>Rich in antioxidants.</p><p class="price">₹120 / kg</p></div>
+<div class="product-card" onclick="toggleItem(this,'Mango',160)"><img src="mango.jpg" alt="Mango"><h3> Mango</h3><p>Alphonso variety.</p><p class="price">₹160 / kg</p></div>
+<div class="product-card" onclick="toggleItem(this,'Pineapple',60)"><img src="pineapple.jpg" alt="Pineapple"><h3> Pineapple</h3><p>Sweet and tangy.</p><p class="price">₹60 / piece</p></div>
+<div class="product-card" onclick="toggleItem(this,'Lemon',15)"><img src="lemon.jpg" alt="Lemon"><h3> Lemon</h3><p>Fresh and zesty.</p><p class="price">₹15 / piece</p></div>
+</section>
+  </section>
+
+  <h2>Vegetables</h2>
+  <section class="product-grid" id="vegetables">
+    <div class="product-card" onclick="toggleItem(this,'Tomato',40)"><img src="tomato.jpg"><h3>Tomato</h3><p>Juicy and ripe.</p><p class="price">₹40 / kg</p></div>
+    <div class="product-card" onclick="toggleItem(this,'Onion',35)"><img src="onion.jpg"><h3>Onion</h3><p>Everyday cooking.</p><p class="price">₹35 / kg</p></div>
+    <div class="product-card" onclick="toggleItem(this,'Potato',30)"><img src="potato.jpg"><h3>Potato</h3><p>All-purpose variety.</p><p class="price">₹30 / kg</p></div>
+    <div class="product-card" onclick="toggleItem(this,'Carrot',50)"><img src="carrot.jpg"><h3>Carrot</h3><p>Crunchy and sweet.</p><p class="price">₹50 / kg</p></div>
+    <div class="product-card" onclick="toggleItem(this,'Cabbage',25)"><img src="cabbage.jpg"><h3>Cabbage</h3><p>Fresh green leaves.</p><p class="price">₹25 / kg</p></div>
+    <div class="product-card" onclick="toggleItem(this,'Cauliflower',35)"><img src="cauliflower.jpg" alt="Cauliflower"><h3> Cauliflower</h3><p>Perfect for curries.</p><p class="price">₹35 / piece</p></div>
+<div class="product-card" onclick="toggleItem(this,'Beans',40)"><img src="beans.jpg" alt="Beans"><h3> Green Beans</h3><p>Crisp and fresh.</p><p class="price">₹40 / kg</p></div>
+<div class="product-card" onclick="toggleItem(this,'Brinjal',30)"><img src="brinjal.jpg" alt="Brinjal"><h3> Brinjal</h3><p>Versatile and tasty.</p><p class="price">₹30 / kg</p></div>
+<div class="product-card" onclick="toggleItem(this,'Ladyfinger',45)"><img src="ladyfinger.jpg" alt="Ladyfinger"><h3> Ladyfinger</h3><p>Soft and tender.</p><p class="price">₹45 / kg</p></div>
+<div class="product-card" onclick="toggleItem(this,'Chilli',20)"><img src="chilli.jpg" alt="Chilli"><h3> Green Chilli</h3><p>Spicy kick.</p><p class="price">₹20 / 100g</p></div>
+  </section>
+
+  <h2>Sweets</h2>
+  <section class="product-grid" id="sweets">
+    <div class="product-card" onclick="toggleItem(this,'Gulab Jamun',40)"><img src="gulab.jpg"><h3>Gulab Jamun</h3><p>Juicy and ripe.</p><p class="price">₹30 / pcs</p></div>
+    <div class="product-card" onclick="toggleItem(this,'Rasgulla',35)"><img src="rasgulla.jpg"><h3>Rasgulla</h3><p>Juicy and ripe.</p><p class="price">₹25 / pcs</p></div>
+    <div class="product-card" onclick="toggleItem(this,'Barfi',30)"><img src="barfi.jpg"><h3>Barfi</h3><p>All-purpose variety.</p><p class="price">₹100 / 250g</p></div>
+    <div class="product-card" onclick="toggleItem(this,'Ladoo',50)"><img src="ladoo.jpg"><h3>Ladoo</h3><p>Juicy and ripe.</p><p class="price">₹80 / 250g</p></div>
+    <div class="product-card" onclick="toggleItem(this,'Jalebi',25)"><img src="jalebi.jpg"><h3>Jalebi</h3><p>Juicy and ripe.</p><p class="price">₹40 / 250g</p></div>
+    <div class="product-card" onclick="toggleItem(this,'Kajukatli',35)"><img src="kajukatli.jpg" alt="Kajukatli"><h3>Kaju Katli</h3><p>Juicy and ripe.</p><p class="price">₹120 / 250g</p></div>
+<div class="product-card" onclick="toggleItem(this,'Halwa',40)"><img src="halwa.jpg" alt="Halwa"><h3> Halwa</h3><p>All-purpose variety.</p><p class="price">₹70 / 250g</p></div>
+<div class="product-card" onclick="toggleItem(this,'Modak',30)"><img src="modak.jpg" alt="Modak"><h3> Modak</h3><p>Versatile and tasty.</p><p class="price">₹85 / 250g</p></div>
+<div class="product-card" onclick="toggleItem(this,'Shrikhand',45)"><img src="shrikhand.jpg" alt="Shrikhand"><h3> Shrikhand</h3><p>Soft and tender.</p><p class="price">₹80 / 250g</p></div>
+<div class="product-card" onclick="toggleItem(this,'Sandesh',20)"><img src="sandesh.jpg" alt="Sandesh"><h3> Sandesh</h3><p>Juicy and ripe.</p><p class="price">₹65 / 250g</p></div>
+  </section>
+
+
+  <h2>Bakery & Dairy</h2>
+  <section class="product-grid" id="bakery">
+    <div class="product-card" onclick="toggleItem(this,'Brown Bread',40)"><img src="bread.jpg"><h3>Bread</h3><p>Whole grain goodness.</p><p class="price">₹40 / pack</p></div>
+    <div class="product-card" onclick="toggleItem(this,'Milk',55)"><img src="milk.jpg"><h3>Milk</h3><p>Full cream milk.</p><p class="price">₹55 / litre</p></div>
+    <div class="product-card" onclick="toggleItem(this,'Curd',35)"><img src="curd.jpg" alt="Curd"><h3> Curd</h3><p>Thick and creamy.</p><p class="price">₹35 / 500ml</p></div>
+    <div class="product-card" onclick="toggleItem(this,'Paneer',85)"><img src="paneer.jpg"><h3>Paneer</h3><p>Soft cottage cheese.</p><p class="price">₹85 / 250g</p></div>
+    <div class="product-card" onclick="toggleItem(this,'Butter',50)"><img src="butter.jpg"><h3>Butter</h3><p>Creamy table butter.</p><p class="price">₹50 / 100g</p></div>
+    <div class="product-card" onclick="toggleItem(this,'Cheese',90)"><img src="cheese.jpg"><h3>Cheese</h3><p>Mild cheddar slices.</p><p class="price">₹90 / pack</p></div>
+    <div class="product-card" onclick="toggleItem(this,'Biscuits',20)"><img src="biscuits.jpg" alt="Biscuits"><h3> Biscuits</h3><p>Tea-time treats.</p><p class="price">₹20 / pack</p></div>
+<div class="product-card" onclick="toggleItem(this,'cake',150)"><img src="cake.jpg" alt="Cake"><h3> Eggless Cake</h3><p>Soft sponge base.</p><p class="price">₹150 / unit</p></div>
+<div class="product-card" onclick="toggleItem(this,'Cookies',50)"><img src="cookies.jpg" alt="Cookies"><h3> Choco Cookies</h3><p>Loaded with chips.</p><p class="price">₹50 / pack</p></div>
+<div class="product-card" onclick="toggleItem(this,'Buns',25)"><img src="bun.jpg" alt="Bun"><h3> Buns</h3><p>Fluffy breakfast buns.</p><p class="price">₹25 / pack</p></div>
+  </section>
+
+  <h2>Pantry Staples</h2>
+  <section class="product-grid" id="pantry">
+    <div class="product-card" onclick="toggleItem(this,'Rice',80)"><img src="rice.jpg"><h3>Basmati Rice</h3><p>Premium long grain.</p><p class="price">₹80 / kg</p></div>
+    <div class="product-card" onclick="toggleItem(this,'Dal',85)"><img src="dal.jpg"><h3>Moong Dal</h3><p>Clean and sorted.</p><p class="price">₹85 / kg</p></div>
+    <div class="product-card" onclick="toggleItem(this,'Wheat',40)"><img src="wheat.jpg"><h3>Wheat Flour</h3><p>Stone-ground atta.</p><p class="price">₹40 / kg</p></div>
+    <div class="product-card" onclick="toggleItem(this,'Sugar',42)"><img src="sugar.jpg"><h3>Sugar</h3><p>Refined granules.</p><p class="price">₹42 / kg</p></div>
+    <div class="product-card" onclick="toggleItem(this,'Salt',20)"><img src="salt.jpg"><h3>Salt</h3><p>Iodized salt.</p><p class="price">₹20 / kg</p></div>
+    <div class="product-card" onclick="toggleItem(this,'Tea',70)"><img src="tea.jpg" alt="Tea"><h3> Tea</h3><p>Aromatic black tea.</p><p class="price">₹70 / 250g</p></div>
+<div class="product-card" onclick="toggleItem(this,'Coffee',120)"><img src="coffee.jpg" alt="Coffee"><h3> Coffee</h3><p>Strong instant powder.</p><p class="price">₹120 / 100g</p></div>
+<div class="product-card" onclick="toggleItem(this,'Oil',130)"><img src="oil.jpg" alt="Oil"><h3> Sunflower Oil</h3><p>Refined and light.</p><p class="price">₹130 / 1000ml</p></div>
+<div class="product-card" onclick="toggleItem(this,'Spices',60)"><img src="spices.jpg" alt="Spices"><h3> Mixed Spices</h3><p>Assorted masala blends.</p><p class="price">₹60 / 100g</p></div>
+<div class="product-card" onclick="toggleItem(this,'Pulses',75)"><img src="pulses.jpg" alt="Pulses"><h3> Chana Dal</h3><p>Protein-rich and flavorful.</p><p class="price">₹75 / kg</p></div>
+  </section>
+  <div id="totalDisplay">Total: ₹0</div>
+
+  <div style="text-align: center; margin: 2em;">
+  <button 
+    onclick="checkout()" 
+    style="padding: 0.8em 2em; font-size: 1.2em; background-color: #feca1a; border: none; border-radius: 5px; cursor: pointer; color: #111;">
+    Buy Now
+  </button>
+</div>
+
+  <div id="checkoutForm" style="display:none; padding:2em; text-align:center;">
+  <h3>Enter Your Details</h3>
+  <form onsubmit="submitForm(event)" style="max-width:400px; margin:auto;">
+    <input type="text" id="name" placeholder="Your Name" required style="width:100%; margin-bottom:1em; padding:0.5em;"><br>
+    <input type="tel" id="phone" placeholder="Phone Number" required style="width:100%; margin-bottom:1em; padding:0.5em;"><br>
+    <textarea id="address" placeholder="Your Address" required style="width:100%; margin-bottom:1em; padding:0.5em;"></textarea><br>
+    <button type="submit" class="btn" style="padding: 0.8em 2em; font-size: 1.2em; background-color: #feca1a; border: none; border-radius: 5px; cursor: pointer; color: #111;">Confirm & Pay</button>
+  </form>
+</div>
+
+<section id="paymentSection" style="display: none; text-align: center; padding: 2em;">
+  <div id="qrCodeContainer"></div>
+</section>
+<footer>
+ &copy; 2025 FreshBasket Grocery · Pune, India · All rights reserved.
+  </footer>
+<script>
+ function detectLocation() {
+  if ("geolocation" in navigator) {
+    navigator.geolocation.getCurrentPosition(
+      async position => {
+        const { latitude, longitude } = position.coords;
+
+        try {
+          const response = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`);
+          const data = await response.json();
+
+          const addressField = document.getElementById("address");
+          if (addressField && data.address) {
+            const {
+              house_number,
+              road,
+              neighbourhood,
+              suburb,
+              city,
+              town,
+              village,
+              county,
+              state,
+              postcode,
+              country
+            } = data.address;
+
+            const fullAddress = [
+              house_number,
+              road,
+              neighbourhood,
+              suburb,
+              city || town || village,
+              county,
+              state,
+              postcode,
+              country
+            ].filter(Boolean).join(', ');
+
+            addressField.value = fullAddress;
+          }
+        } catch (error) {
+          console.error("Location detection failed:", error);
+        }
+      },
+      error => {
+        alert("Unable to retrieve your location. Please enter it manually.");
+        console.error(error);
+      }
+    );
+  } else {
+    alert("Geolocation is not supported by your browser.");
+  }
+}
+
+window.addEventListener('load', detectLocation);
+</script>
+
+  <script>
+  let selectedItems = [];
+
+  function toggleItem(element, name, price) {
+    const index = selectedItems.findIndex(item => item.name === name);
+    if (index === -1) {
+      selectedItems.push({ name, price });
+      element.classList.add('selected');
+    } else {
+      selectedItems.splice(index, 1);
+      element.classList.remove('selected');
+    }
+
+    const total = selectedItems.reduce((sum, item) => sum + item.price, 0);
+    document.getElementById('totalDisplay').textContent = `Total: ₹${total}`;
+  }
+
+  function checkout() {
+    if (selectedItems.length === 0) {
+      alert("Please select some products first!");
+    } else {
+      document.getElementById("checkoutForm").style.display = "block";
+      window.scrollTo(0, document.body.scrollHeight);
+    }
+  }
+
+  function submitForm(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const address = document.getElementById("address").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+
+    if (!name || !address || !phone) {
+      alert("Please fill in all fields.");
+      return;
+    }
+
+    const itemList = selectedItems.map(item => item.name).join(', ');
+    const totalAmount = selectedItems.reduce((sum, item) => sum + item.price, 0);
+
+    document.getElementById("checkoutForm").style.display = "none";
+    document.getElementById("paymentSection").style.display = "block";
+    document.getElementById("paymentSection").scrollIntoView({ behavior: "smooth" });
+
+    const qrData = `upi://pay?pa=sopangavali99@oksbi&pn=FreshBasket&am=${totalAmount}&cu=INR`;
+    const qrContainer = document.getElementById("qrCodeContainer");
+    qrContainer.innerHTML = "";
+
+    const qrImage = document.createElement("img");
+    qrImage.src = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(qrData)}&size=200x200`;
+    qrImage.alt = "Scan to Pay";
+    qrContainer.appendChild(qrImage);
+
+    const qrLabel = document.createElement("p");
+    qrLabel.textContent = `Scan to pay ₹${totalAmount}`;
+    qrContainer.appendChild(qrLabel);
+
+    selectedItems = [];
+    document.querySelectorAll('.product-card.selected').forEach(card => card.classList.remove('selected'));
+    document.getElementById('totalDisplay').textContent = `Total: ₹0`;
+  }
+</script>
+</body>
+</html>
